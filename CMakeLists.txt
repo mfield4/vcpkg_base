@@ -2,18 +2,18 @@ cmake_minimum_required(VERSION 3.19)
 
 include(cmake/VcpkgSetup.cmake)
 
-project(vcpkg_test)
+project(vcpkg_base CXX)
 
-add_library(project_options INTERFACE)
-add_library(project_warnings INTERFACE)
-
-include(cmake/CompilerOptions.cmake)
-include(cmake/CompilerWarnings.cmake)
-include(cmake/StaticAnalyzers.cmake)
-include(cmake/Sanitizers.cmake)
+add_subdirectory(cmake)
 
 add_executable(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} PUBLIC project_options project_warnings)
+
+set_target_properties(
+        ${PROJECT_NAME}
+        PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out/bin
+)
 
 add_subdirectory(src)
 add_subdirectory(external)

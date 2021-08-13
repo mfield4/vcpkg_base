@@ -4,6 +4,11 @@
 
 #include <fmt/format.h>
 
+template <class T>
+concept test_concept = std::is_integral_v<T>;
+
 int main() {
-  fmt::print("Hello {}", "World!");
+  if constexpr (test_concept<int>) {
+    fmt::print("Hello {}", "World!");
+  }
 }

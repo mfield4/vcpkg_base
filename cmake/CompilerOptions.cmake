@@ -46,6 +46,7 @@ target_compile_features(project_options INTERFACE cxx_std_20)
 set_target_properties(
         project_options
         PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/out/bin"
         ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/out/lib"
         LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/out/lib"
 )
