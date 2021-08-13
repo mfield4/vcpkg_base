@@ -1,7 +1,16 @@
 {
-  "name": "fibo",
+  "name": "vcpkgtest",
   "version-string": "0.1.0",
   "dependencies": [
     "fmt"
-  ]
+  ],
+
+  "features": {
+    "tests": {
+      "description": "Build Tests",
+      "dependencies": [
+        "gtest"
+      ]
+    }
+  }
 }

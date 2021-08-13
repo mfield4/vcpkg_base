@@ -17,3 +17,9 @@ target_link_libraries(${PROJECT_NAME} PUBLIC project_options project_warnings)
 
 add_subdirectory(src)
 add_subdirectory(external)
+
+if (BUILD_TESTS)
+    MESSAGE(STATUS "TESTS")
+    enable_testing()
+    add_subdirectory(tests)
+endif ()
